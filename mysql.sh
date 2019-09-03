@@ -12,6 +12,7 @@ fi
 # (It's likely that user cancelled the operation)
 if [[ $(pgrep mysql) == "" ]]; then
     loop=false
+    zenity --notification --text "The MySQL service was not started"
 fi
 
 while $loop
@@ -28,6 +29,6 @@ do
         loop=false
     else
         # Otherwise, notify the user
-        notify-send "MySQL" "The MySQL service was not ended" --icon=$ICONPATH
+        zenity --notification --text "The MySQL service was not ended"
     fi
 done
