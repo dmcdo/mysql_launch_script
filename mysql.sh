@@ -3,7 +3,10 @@
 ICONPATH="$( cd "$(dirname "$0")" ; pwd -P )/icon.svg"
 
 loop=true
-systemctl start mysql
+
+if [[ $(pgrep mysql) == "" ]]; then
+    systemctl start mysql
+fi
 
 # If mysql did not start, do not enter loop
 # (It's likely that user cancelled the operation)
