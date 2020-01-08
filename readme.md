@@ -6,7 +6,7 @@ It uses an icon placed in the same directory as the scripts location. This icon 
 
 ## Requirements
 
-- yad (and also a functional system tray)
+- yad
 - zenity
 - systemd
-- MySQL (duh)
+- MySQL
